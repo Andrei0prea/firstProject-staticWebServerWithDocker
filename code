@@ -1,0 +1,54 @@
+    1  sudo apt-get update
+    2  sudo apt-get install \
+         apt-transport-https \
+         ca-certificates \
+         curl \
+         gnupg \
+         lsb-release
+    3  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+    4  echo \
+         "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+         $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    5  sudo apt-get update
+    6  sudo apt-get install docker-ce docker-ce-cli containerd.io
+    6  sudo apt-get install docker-ce=<5:19.03.9~3-0~ubuntu-focal> docker-ce-cli=<5:19.03.9~3-0~ubuntu-focal> containerd.io
+    6  sudo docker run hello-world
+    5  docker pull nginx
+    6  sudo systemctl status nginx
+    6  docker run -p 8080:80 -d nginx
+    7  docker ps
+   10  docker run -p 8080:80 -v "$PWD":/Desktop/proiecte/hello.html:ro -d nginx
+   11  docker rm cdc6d1f17e52
+   12  docker stop cdc6d1f17e52
+   13  docker rm cdc6d1f17e52
+   14  docker ps
+   15  docker run -p 8080:80 -v "$PWD":/Desktop/proiecte/hello.html:ro -d nginx
+   16  docker ps
+   17  docker stop cdc6d1f17e52
+   18  docker stop 7d3a35bc1176
+   19  docker rm 7d3a35bc1176
+   20  docker ps
+   21  clear
+   22  cd usr
+   25  cd /usr
+   26  ls
+   27  cd share/nginx/
+   28  ld
+   29  ls -a
+   30  cd html
+   31  ls
+   32  nano index.html 
+
+
+   37  docker run -p 8080:80 -d hello
+   38  docker run -p 8080:80 -v "$PWD":/usr/share/nginx/index.html:ro -d nginx
+   39  docker ps
+   40  docker stop 2c0a48ec896e
+   41  docker rm 2c0a48ec896e
+   42  docker ps
+   43  clear
+   44  docker run -p 8080:80 -v "$PWD":/usr/share/nginx/html:ro -d nginx
+   45  docker ps
+   46  ls
+   47  gedit index.html 
